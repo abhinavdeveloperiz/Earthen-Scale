@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Earth N’ Sky Architects & Engineers{% endblock  %}
+
+{% block parallax %}https://images.pexels.com/photos/7237705/pexels-photo-7237705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1{% endblock  %}
+
+{% block heading %}CONTACT US{% endblock  %}
+
+{% block body %}
+
+
+<div class="container mt-5 mb-5">
+    <div class="contact_us" data-aos="slide-right">
+        <div class="row" >
+            <div class="col-lg-6">
+                <div class="connect d-flex justify-content-center align-items-center mb-5" >
+                    <h2>GET IN TOUCH</h2>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone no</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <div >
+                    <img class="img-fluid" src="https://bootstrapmade.com/content/demo/Blogy/assets/img/cta/cta-1.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.1600202709105!2d76.6574595!3d8.8646909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05e333315ed755%3A0x5ad1f5f74a5b75ea!2sEARTHEN%20SCALE%20DESIGN%20CONSORTIUM%20PVT.LTD!5e0!3m2!1sen!2sin!4v1746868611253!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+{% endblock %}

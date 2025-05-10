@@ -1,0 +1,709 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth N’ Sky Architects & Engineers</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+    <!-- bootstrap icons-------------------- -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- AOS----------------------- -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+  
+
+    
+
+  
+  <div class="header">
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-aos="slide-right">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="">
+          <img src="{% static 'images/newlogo.png' %}" alt="" style="height: auto; width:60px">
+        </a>
+    
+        <!-- Get a Quote button for Mobile (visible only in mobile) -->
+        <button class="btn btn-primary d-lg-none" style="margin-left: 80px;" data-bs-toggle="offcanvas" data-bs-target="#getQuoteOffcanvas">
+          Get a Quote
+        </button>
+    
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+          <ul class="navbar-nav mx-auto gap-3">
+            <li class="nav-item"><a class="nav-link" href="">Home</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="who-we-are">Who We Are</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="what-we-offer">What We Offer</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="projects">Our Projects</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="careers">Careers</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="contact-us">Contact Us</a><i class="ri-arrow-up-double-line"></i> </li>
+          </ul>
+    
+          <!-- Get a Quote button for Desktop (hidden on mobile) -->
+          <button class="btn d-none d-lg-block" style="margin-top: 5px; margin-left: 20px; width: 150px; background-color: #2F408F; color: white;" data-bs-toggle="offcanvas" data-bs-target="#getQuoteOffcanvas">
+            Get a Quote
+          </button>
+        </div>
+      </div>
+    </nav>
+    
+    
+    
+    <!-- Offcanvas for Get a Quote -->
+    <div class="offcanvas offcanvas-end bg-black" tabindex="-1" id="getQuoteOffcanvas" aria-labelledby="getQuoteOffcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-white" id="getQuoteOffcanvasLabel">Get a Quote</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <form class="text-white">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3" placeholder="Describe your request"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+      
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <video class="d-block w-100" autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/3770034/3770034-hd_1920_1080_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-overlay"></div>
+              <div class="carousel-caption custom-caption" >
+                <h1 >Innovative Architectural Designs</h1>
+                <p>Shaping the future skyline with cutting-edge construction.</p>
+              </div>
+            
+            </div>
+            <div class="carousel-item">
+              <video class="d-block w-100" autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/6356429/6356429-hd_1920_1080_30fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-overlay"></div>
+              <div class="carousel-caption custom-caption">
+                <h1>Building Tomorrow Today</h1>
+                <p>Reliable construction solutions for modern infrastructure.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <video class="d-block w-100" autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/7574418/7574418-hd_1920_1080_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-overlay"></div> 
+              <div class="carousel-caption custom-caption">
+                <h1>Architectural Excellence</h1>
+                <p>Blending creativity and functionality in every project.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+
+
+
+        
+
+        <div class="sticky_icons">
+          <a href="https://wa.me/918907028295">
+          <div class="sticky_icon">
+            <i class="ri-whatsapp-line"></i>
+          </div>
+          </a>
+          <a href="tel:+918907028295">
+          <div class="sticky_icon">
+            <i class="ri-phone-line"></i>
+          </div>
+          </a>
+        </div>
+        
+
+       
+  </div>
+
+  <div class="header_box" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-6 mb-3 mt-3 text-center">
+                <div class="header_box_details" data-aos="slide-right" >
+                    <span class="counter" data-target="180">0</span>+
+                    <h5>CURRENT CLIENTS</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-3 mt-3 text-center">
+                <div class="header_box_details" data-aos="slide-right" data-aos-delay="200">
+                    <span class="counter" data-target="10">0</span>+
+                    <h5>YEARS OF EXPERIENCE</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-3 mt-3 text-center">
+                <div class="header_box_details" data-aos="slide-right" data-aos-delay="300">
+                    <span class="counter" data-target="30">0</span>+
+                    <h5>AWARD WINNING</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6 mb-3 mt-3 text-center">
+                <div class="header_box_details" data-aos="slide-right" data-aos-delay="400">
+                    <span class="counter" data-target="5">0</span>+
+                    <h5>OFFICES WORLDWIDE</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="parallax_container1 d-flex justify-content-center align-items-center">
+    <div class="container pb-5">
+      <div class="page_head d-flex justify-content-center align-items-center flex-column mb-5">
+        <div class="heading">
+          <div class="sub_heading d-flex align-items-center gap-1">
+            <h6 class="mt-2">ABOUT</h6>
+            {% comment %} <div class="line"></div> {% endcomment %}
+            <div class="loader"></div>
+          </div>
+          <h4 class="heading">ABOUT SECTION</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-12 about_img" data-aos="fade-right" data-aos-delay="100">
+          <img src="{% static "images/img4.jpg" %}" alt="">
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12 d-flex flex-column justify-content-between" data-aos="fade-right" data-aos-delay="300">
+          <div class="d-flex flex-column justify-content-between">
+            <h2 class="mb-4">Let’s shape your dream together, where Earth meets Scale</h2>
+          
+            <p class="mb-5" style="text-align: justify;">
+              At Earth & Scale Architects & Engineers, we blend the vision of architecture with the exactness of engineering. Our mission is to design environments that are as enduring as they are inspiring. Innovation fuels our process, ensuring that each project embodies modern functionality while reflecting timeless design principles. Sustainability guides every decision, helping us create in harmony with the natural world. We believe great design balances human experience with ecological responsibility. Each structure we craft is a fusion of beauty, practicality, and purpose. By aligning aesthetics with structural integrity, we deliver spaces that elevate everyday living. Our work respects tradition while embracing the future, always driven by thoughtful collaboration. At Earth & Scale, we shape more than buildings—we shape possibilities, grounded in precision and inspired by nature.
+            </p>
+          </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parallax_container2">
+    <div class="container pb-5">
+        <div class="page_head d-flex justify-content-center align-items-center flex-column mb-5">
+            <div class="heading">
+                <div class="sub_heading d-flex align-items-center gap-1">
+                    <h6 class="mt-2">SERVICES</h6>
+                    {% comment %} <div class="line"></div> {% endcomment %}
+                    <div class="loader"></div>
+                </div>
+                <h4 class="heading">SERVICE SECTION</h4>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-md-3" data-aos="slide-right" data-aos-delay="100">
+              <div class="rounded-4 text-center p-3 mb-4 shadow" style="background-color: #ffffff; height: 200px;">
+                  <i class="bi bi-building fs-1" style="color: #2F408F;"></i>
+                  <h5 class="card-title mt-4 text-dark">TURNKEY PROJECTS</h5>
+                  <a href="{% url 'what-we-offer' %}" class="btn mt-3" style="background-color: #2F408F; color: white;">Read More</a>
+              </div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="slide-right" data-aos-delay="200">
+              <div class="rounded-4 text-center p-3 mb-4 shadow" style="background-color: #2F408F; height: 200px;">
+                  <i class="bi bi-lightbulb fs-1 text-white"></i>
+                  <h5 class="card-title mt-4 text-white">TOTAL CONSULTANCY</h5>
+                  <a href="{% url 'what-we-offer' %}" class="btn btn-light mt-3">Read More</a>
+              </div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="slide-right" data-aos-delay="300">
+              <div class="rounded-4 text-center p-3 mb-4 shadow" style="background-color: #ffffff; height: 200px;">
+                  <i class="bi bi-brush fs-1" style="color: #2F408F;"></i>
+                  <h5 class="card-title mt-4 text-dark">INTERIOR DESIGN</h5>
+                  <a href="{% url 'what-we-offer' %}" class="btn mt-3" style="background-color: #2F408F; color: white;">Read More</a>
+              </div>
+          </div>
+          <div class="col-6 col-md-3" data-aos="slide-right" data-aos-delay="400">
+              <div class="rounded-4 text-center p-3 mb-4 shadow" style="background-color: #2F408F; height: 200px;">
+                  <i class="bi bi-tree fs-1 text-white"></i>
+                  <h5 class="card-title mt-4 text-white">LANDSCAPE DESIGN</h5>
+                  <a href="{% url 'what-we-offer' %}" class="btn btn-light mt-3">Read More</a>
+              </div>
+          </div>
+      </div>
+      
+    </div>
+</div>
+
+
+  <div class="contact-container">
+    <div class="want">
+      <span>Know more about us ?</span>
+    </div>
+    <a href="contact-us">
+      <button class="reads">
+        <span class="box">
+            Contact Us
+        </span>
+      </button>
+    </a>
+  </div>
+  
+  <div class="parallax_container3">
+    <div class="container pb-5">
+      <div class="page_head d-flex justify-content-center align-items-center flex-column mb-5">
+        <div class="heading">
+          <div class="sub_heading d-flex align-items-center gap-1">
+            <h6 class="mt-2">PROJECTS</h6>
+            {% comment %} <div class="line"></div> {% endcomment %}
+            <div class="loader"></div>
+          </div>
+          <h4 class="heading">PROJECTS SECTION</h4>
+        </div>
+      </div>
+
+      <div class="row projects">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+  <a href="project-details" class="project-card">
+    <div class="projects_details">
+      <img src="{% static 'media/1.jpg' %}" alt="Mr. SIDRA Residential Project">
+      <div class="content">
+        <h6>SIDRA</h6>
+        <span class="project-type">[RESIDENTIAL]</span>
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </a>
+</div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+  <a href="project-details" class="project-card">
+    <div class="projects_details">
+      <img src="{% static 'media/2.jpg' %}" alt="Mr. SIDRA Residential Project">
+      <div class="content">
+        <h6>AGHADHAARA</h6>
+        <span class="project-type">[RESIDENTIAL]</span>
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </a>
+</div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+  <a href="project-details" class="project-card">
+    <div class="projects_details">
+      <img src="{% static 'media/3.jpg' %}" alt="Mr. SIDRA Residential Project">
+      <div class="content">
+        <h6>ELORA</h6>
+        <span class="project-type">[RESIDENTIAL]</span>
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </a>
+</div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+  <a href="project-details" class="project-card">
+    <div class="projects_details">
+      <img src="{% static 'media/4.jpg' %}" alt="Mr. SIDRA Residential Project">
+      <div class="content">
+        <h6> COGNITIVE CENTER</h6>
+        <span class="project-type">[PUBLIC BUILDING]</span>
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </a>
+</div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+  <a href="project-details" class="project-card">
+    <div class="projects_details">
+      <img src="{% static 'media/6.jpg' %}" alt="Mr. SIDRA Residential Project">
+      <div class="content">
+        <h6>SANKETHAM</h6>
+        <span class="project-type">[RESIDENTIAL]</span>
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </a>
+</div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+  <a href="project-details" class="project-card">
+    <div class="projects_details">
+      <img src="{% static 'media/1.1.jpg' %}" alt="Mr. SIDRA Residential Project">
+      <div class="content">
+        <h6>Mr. SIDRA</h6>
+        <span class="project-type">[RESIDENTIAL]</span>
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </a>
+</div>
+
+      </div>
+
+      <div class="d-flex justify-content-center mt-4">
+        {% comment %} <div class="read" style="width: 200px;">
+          <a href="projects">
+            <span>READ MORE . . .</span>
+          </a>
+        </div> {% endcomment %}
+        <a href="projects">
+          <button class="reads">
+            <span class="box">
+              READ MORE
+            </span>
+          </button>
+        </a>
+      </div> 
+
+      
+
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <div class="want">
+      <span>Wanna build up your career with us ?</span>
+    </div>
+    <a href="careers">
+      <button class="reads">
+        <span class="box">
+          Contact Us
+        </span>
+      </button>
+    </a>
+  </div>
+
+
+  {% comment %} <div class="faq">
+    <div class="container pb-5 pt-5">
+      <div class="page_head d-flex justify-content-center align-items-center flex-column mb-5">
+        <div class="heading">
+          <div class="sub_heading d-flex align-items-center gap-1">
+            <h6 class="mt-2">FAQ</h6>
+            <div class="line"></div>
+          </div>
+          <h4 class="heading">FAQ SECTION</h4>
+        </div>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              WHAT ARE THE SERVICES WE PROVIDE ?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto obcaecati vel voluptates minima ad sequi dolore ratione molestiae cum qui, unde est nam facere aliquam neque quia corrupti aperiam laborum dolores. Dolorum, ratione voluptates ex nemo eius quos aliquam totam quas magni numquam commodi fuga. Optio, modi ratione? Placeat hic, voluptate .</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              FAQ QUESTION ?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus asperiores fuga veniam minus quia nostrum accusantium optio pariatur natus? Quod delectus excepturi ullam qui animi perspiciatis, repellendus quo cumque quibusdam molestias facilis rem aperiam incidunt ea harum laboriosam culpa dolor? Quam autem animi cum earum ab </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              FAQ QUESTION ?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas recusandae quo, repudiandae quas et libero deserunt cum fuga obcaecati eaque in eos, rerum mollitia magnam tempore culpa repellat. Nulla praesentium eaque accusantium dolor numquam quisquam! Amet facere perspiciatis eos in, quos minima! Nobis soluta ex est autem. Harum </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+              FAQ QUESTION ?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas recusandae quo, repudiandae quas et libero deserunt cum fuga obcaecati eaque in eos, rerum mollitia magnam tempore culpa repellat. Nulla praesentium eaque accusantium dolor numquam quisquam! Amet facere perspiciatis eos in, quos minima! Nobis soluta ex est autem. Harum </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> {% endcomment %}
+
+
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-6">
+          <div class="d-flex flex-column">
+            <div class="footer_logo mb-3">
+              <img src="{% static "images/newlogo.png" %}" alt="">
+            </div>
+
+            <p>Let’s shape your dream together, where Earth finds its balance with Scale.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer_links">
+                  <p style="font-size: 18px; font-weight: 900 !important;">QUICK LINKS</p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="/">
+                    <p class="hover">Home</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="who-we-are">
+                  <p class="hover">Who we are</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="what-we-offer">
+                    <p class="hover">What we offer</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="projects">
+                    <p class="hover">Our Projects</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="careers">
+                    <p class="hover">Careers</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="contact-us">
+                    <p class="hover">Contact us</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer_links">
+                  <p style='font-size: 18px; font-weight: 900 !important;'>WHAT WE OFFER</p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="what-we-offer">
+                    <p class="hover">Turnkey Projects</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="what-we-offer">
+                    <p class="hover">Architecture Consultancy</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="what-we-offer">
+                    <p class="hover">Interior Design</p>
+                </a>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="footer_links">
+                <a href="what-we-offer">
+                    <p class="hover">Landscape Design</p>
+                </a>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+
+
+        <div class="col-lg-2 col-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer_links">
+                  <p style='font-size: 18px; font-weight: 900 !important;'>ADDRESS</p>
+              </div>
+            </div>
+            <div class="d-flex gap-3">
+              Pattaru Mukku, Umayanalloor,
+              Kottiyam, Mayyanad, Kerala 691589
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer_links">
+                  <p style='font-size: 18px; font-weight: 900 !important;'>GET IN TOUCH</p>
+              </div>
+            </div>
+            <div class="d-flex gap-3">
+              <a href="tel:+918907028295">
+                <div class="d-flex gap-1">
+                  <i class="ri-phone-line hover"></i>
+                </div>
+              </a>
+              <a href="https://wa.me/918907028295" target="_blank">
+  <div class="d-flex gap-1">
+    <i class="ri-whatsapp-line hover"></i>
+  </div>
+</a>
+
+              <a href="https://www.instagram.com/earthenscale?igsh=a3pzd28ycDR1Nzdh&utm_source=qr">
+                <div class="d-flex gap-1">
+                  <i class="ri-instagram-line hover"></i>
+                </div>
+              </a>
+              <a href="https://www.facebook.com/EarthnSky.Constructions">
+                <div class="d-flex gap-1">
+                  <i class="ri-facebook-circle-fill hover"></i>
+                </div>
+              </a>
+
+            </div>
+          
+          </div>
+        </div>
+        
+        
+       
+      </div>
+
+      </div>
+
+      <div class="footer_line"></div>
+
+      <div class="copy d-flex justify-content-center">
+        <p>Copyright © 2025 All rights reserved | Designed by <a href="https://inspirezesttechnologies.com/">InspireZest Technologies Pvt Ltd</a></p>
+      </div>
+    </div>
+  </div>
+
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="{% static "js/main.js" %}"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter");
+        let counted = false; // Prevents recounting
+
+        const countUp = (counter) => {
+            const target = +counter.getAttribute("data-target");
+            let count = 0;
+            const speed = target / 100; // Adjust speed based on value
+
+            const updateCount = () => {
+                if (count < target) {
+                    count += speed;
+                    counter.innerText = Math.floor(count);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.innerText = target; // Ensures exact final value
+                }
+            };
+
+            updateCount();
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counted) {
+                    counters.forEach(counter => countUp(counter));
+                    counted = true; // Ensures it runs only once
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector(".header_box"));
+    });
+</script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>

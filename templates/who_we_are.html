@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Earth N’ Sky Architects & Engineers{% endblock  %}
+
+{% block parallax %}https://images.pexels.com/photos/15368264/pexels-photo-15368264/free-photo-of-inscription-on-cubes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1{% endblock  %}
+
+{% block heading %}WHO WE ARE{% endblock  %}
+
+{% block body %}
+
+
+
+    <div class="container pb-5 pt-5">
+
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-12 about_img" data-aos="slide-right">
+            <img src="{% static "images/img4.jpg" %}" alt="">
+          </div>
+
+          <div class="col-lg-6 col-md-12 col-12" data-aos="slide-right">
+            <div class="d-flex flex-column justify-content-between">
+              <h2 class="mb-4">"Let’s shape your dream together, where Earth finds its balance with Scale."</h2>
+
+              <p class="mb-5">
+                At Earthen Scale Architects & Engineers, we bring together the art of architecture and the
+                precision of engineering to design spaces that inspire, function, and endure. With a deep
+                commitment to innovation, sustainability, and excellence, we create structures that harmonize
+                with both the natural environment and modern living.
+              </p>
+
+              <div class="col-12 text-center" >
+                <video controls width="100%" style="max-width: 800px;">
+                    <source src="https://videos.pexels.com/video-files/3555398/3555398-hd_1920_1080_30fps.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+              </div>
+
+            </div>
+            
+          </div>
+          
+        </div>
+      
+    </div>
+
+    <div class="contact-container">
+        <div class="want">
+            <span>Know more about us ?</span>
+        </div>
+        <a href="contact-us">
+          <button class="reads">
+            <span class="box">
+              CONTACT US
+            </span>
+          </button>
+        </a>
+    </div>
+
+
+    <!-- offcanvas========================================= -->
+
+    
+    <!-- <div class="container">
+      <div class="row my-5">
+
+        <div class="col-12 col-md-6 mb-5 d-flex justify-content-center">
+              <div class="card text-center shadow-lg p-3" style="width: 18rem; height: 220px; background: rgb(60, 122, 255); ">
+                  <div class="card-body">
+                      <i class="fas fa-users fa-3x mb-3"></i> 
+                      <h5 class="card-title">OUR TEAM</h5>
+
+                      <button class="btn btn-secondary mt-2" type="button" data-bs-toggle="offcanvas"
+                          data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                          View More
+                      </button>
+                  </div>
+              </div>
+  
+              <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                  aria-labelledby="offcanvasWithBothOptionsLabel">
+                  <div class="offcanvas-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+
+                    <div class="col-12 text-center mb-4">
+                          <div class="team_img">
+                              <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                  alt="Team Image" class="img-fluid rounded">
+                          </div>
+                      </div>
+  
+                      <div class="col-12 text-center">
+                          <h2 class="mb-3">OUR TEAM</h2>
+                          <p>
+                              We are a multidisciplinary team of architects, engineers, and designers dedicated to
+                              transforming ideas into reality. Our expertise spans a wide range of projects, from
+                              residential and commercial spaces to industrial and institutional developments.
+                          </p>
+  
+                          <div class="team_contact mt-3">
+                              <span>Join Our Team</span>
+                              <a href="careers">
+                                  <button class="reads">
+                                      <span class="box">JOIN</span>
+                                  </button>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+              <div class="card text-center shadow-lg p-3" style="width: 18rem; height: 220px;  background: rgb(163, 163, 163);">
+                  <div class="card-body">
+                      <i class="fas fa-lightbulb fa-3x mb-3"></i> 
+                      <h5 class="card-title">OUR PHILOSOPHY</h5>
+
+                      <button class="btn btn-primary mt-2" type="button" data-bs-toggle="offcanvas"
+                          data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                          View More
+                      </button>
+                  </div>
+              </div>
+  
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
+                  <div class="offcanvas-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                      <div class="col-12 text-center mb-4">
+                          <div class="team_img">
+                              <img src="https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                  alt="Philosophy Image" class="img-fluid rounded">
+                          </div>
+                      </div>
+  
+                      <div class="col-12 text-center">
+                          <h2 class="mb-3">OUR PHILOSOPHY</h2>
+                          <p class="mb-4">
+                              We believe that great architecture goes beyond buildings—it shapes experiences, enhances
+                              communities, and respects nature. By combining sustainable design principles, smart
+                              technologies, and innovative engineering solutions, we create spaces that are not only
+                              beautiful but also efficient and future-ready.
+                          </p>
+  
+                          <div class="team_contact mt-3">
+                              <span>Join Our Team</span>
+                              <a href="careers">
+                                  <button class="reads">
+                                      <span class="box">JOIN</span>
+                                  </button>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  
+      </div>
+  </div>
+   -->
+   <div class="container mt-5 mb-5" >
+
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-12 d-flex flex-column justify-content-between" data-aos="fade-right" data-aos-delay="100">
+            <div class="d-flex flex-column justify-content-between">
+              <h2 class="mb-4">OUR TEAM</h2>
+    
+              <p>
+                We are a multidisciplinary team of architects, engineers, and designers dedicated to
+                transforming ideas into reality. Our expertise spans a wide range of projects, from
+                residential and commercial spaces to industrial and institutional developments. Every
+                design we craft is guided by a passion for aesthetics, structural integrity, and environmental
+                responsibility. With Earthen Scale, you get more than just design and engineering you get a
+                partner in building the future.
+              </p>
+    
+            </div>
+
+            <div class="team_contact">
+                <span>Join Our Team</span>
+                    <a href="careers">
+                      <button class="reads">
+                        <span class="box">
+                          JOIN
+                        </span>
+                      </button>
+                    </a>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12" data-aos="fade-right" data-aos-delay="200">
+            <div class="team_img">
+                <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+
+        <div class="col-lg-6 col-md-12 col-12" data-aos="fade-right" data-aos-delay="100">
+            <div class="team_img">
+                <img src="https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12 d-flex flex-column justify-content-between" data-aos="fade-right" data-aos-delay="200">
+            <div class="d-flex flex-column justify-content-between">
+              <h2 class="mb-4">OUR PHILOSOPHY</h2>
+    
+              <p class="mb-5">
+                We believe that great architecture goes beyond buildings it shapes experiences, enhances
+                communities, and respects nature. By combining sustainable design principles, smart
+                technologies, and innovative engineering solutions, we create spaces that are not only
+                beautiful but also efficient and future-ready.
+              </p>
+    
+            </div>
+
+            <div class="team_contact">
+                <span>Join Our Team</span>
+                    <a href="careers">
+                      <button class="reads">
+                        <span class="box">
+                          JOIN
+                        </span>
+                      </button>
+                    </a>
+            </div>
+            
+        </div>
+
+      
+    </div>
+</div>
+
+
+    </div>
+
+ 
+{% endblock  %}
