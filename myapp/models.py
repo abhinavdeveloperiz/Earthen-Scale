@@ -28,13 +28,22 @@ class Hiring(models.Model):
     name=models.CharField(max_length=100)
     email=models.EmailField()
     phone=models.CharField(max_length=15)
-    postition_choice=(
-        ('developer','developer'),
-        ('designer','designer'),
-        ('manager','manager'),
-        ('analyst','analyst')
-    )
-    position=models.CharField(max_length=100,choices=postition_choice)
+    position_choice = (
+    ('architect', 'Architect'),
+    ('junior_architect', 'Junior Architect'),
+    ('interior_designer', 'Interior Designer'),
+    ('3d_visualizer', '3D Visualizer'),
+    ('project_manager', 'Project Manager'),
+    ('site_engineer', 'Site Engineer'),
+    ('urban_planner', 'Urban Planner'),
+    ('draughtsman', 'Draughtsman'),
+    ('bim_specialist', 'BIM Specialist'),
+    ('landscape_architect', 'Landscape Architect'),
+    ('civil_engineer', 'Civil Engineer'),
+    ('structural_engineer', 'Structural Engineer'),
+    ('admin_staff', 'Admin Staff'),
+)
+    position=models.CharField(max_length=100,choices=position_choice)
     resume=models.FileField(upload_to='resumes/')
     def __str__(self):
         return self.name

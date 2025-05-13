@@ -67,9 +67,77 @@ def project_details(request,id):
 def what(request):
     return render(request, 'what_we_offer.html')
 
+
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
+from django.utils.html import strip_tags
+from django.contrib import messages
+
+import mimetypes
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
+from django.utils.html import strip_tags
+from django.contrib import messages
+
 def career(request):
-    
-    return render(request, 'careers.html')
+    if request.method == "POST":
+        form = Hiring_Form(request.POST, files=request.FILES)
+        if form.is_valid():
+            contact = form.save()
+            messages.success(request, "Submitted Successfully")
+
+            # Email content
+            subject = "Careers Request"
+            html_content = f"""
+            <div style="max-width: 500px; margin: auto; background-color: #000000; color: #ffffff; font-family: 'Arial', sans-serif; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+                <div style="background-color: #00264d; padding: 20px; text-align: center;">
+                    <h2 style="margin: 0; font-size: 22px;">Request Details</h2>
+                </div>
+                <div style="padding: 20px;">
+                    <p style="margin: 10px 0;"><strong>Name:</strong> {contact.name}</p>
+                    <p style="margin: 10px 0;"><strong>Email:</strong> <b style="color: #1e90ff;">{contact.email}</b></p>
+                    <p style="margin: 10px 0;"><strong>Phone:</strong> <a href="tel:{contact.phone}" style="color: #1e90ff; text-decoration: none;">{contact.phone}</a></p>
+                    <p style="margin: 10px 0;"><strong>Position:</strong> {contact.position}</p>
+                </div>
+                <div style="background-color: #111111; padding: 10px; text-align: center; font-size: 12px; color: #888;">
+                    <p style="margin: 0;">You received this message via your website's contact form.</p>
+                </div>
+            </div>
+            """
+
+            # Plain-text fallback
+            plain_text = strip_tags(html_content)
+
+            # Create email object
+            email = EmailMultiAlternatives(
+                subject=subject,
+                body=plain_text,
+                from_email=settings.EMAIL_HOST_USER,
+                to=[settings.CONTACT_EMAIL]
+            )
+
+            # Attach the HTML content
+            email.attach_alternative(html_content, "text/html")
+
+            # Attach the resume file if available
+            if contact.resume:
+                # Open the resume file and attach it to the email
+                with contact.resume.open() as resume_file:
+                    # Get the file's MIME type
+                    mime_type, encoding = mimetypes.guess_type(contact.resume.name)
+                    if mime_type is None:
+                        mime_type = 'application/octet-stream'  # Default MIME type for binary files
+                    email.attach(contact.resume.name, resume_file.read(), mime_type)
+
+            # Send the email
+            email.send()
+
+    else:
+        form = Hiring_Form()
+
+    return render(request, 'careers.html', {"form": form})
+
+
 
 def contact(request):
     if request.method=="POST":
