@@ -526,7 +526,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(0 0 0 / 32%); /* Adjust the 0.5 to control darkness */
+    background: rgb(0 0 0 / 70%); /* Adjust the 0.5 to control darkness */
     z-index: 1;
 }
 
@@ -1316,4 +1316,12 @@ p {
     transform: translateY(0);
     background: rgba(0,0,0,0.6);
   }
+}
+
+/* messages=============================================== */
+.alert-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: white !important;
+    border-radius: 8px;
 }

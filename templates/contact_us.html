@@ -9,7 +9,22 @@
 {% block heading %}CONTACT US{% endblock  %}
 
 {% block body %}
-
+<!-- messages================================ -->
+ {% if messages %}
+  <div class="position-fixed top-0 start-0 p-3" style="z-index: 1050;">
+    {% for message in messages %}
+      <div class="alert alert-success d-flex align-items-center shadow" role="alert" style="min-width: 300px; max-width: 500px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-check-circle-fill flex-shrink-0 me-2" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.97 11.03a.75.75 0 0 0 1.07 0l4.243-4.242a.75.75 0 0 0-1.06-1.06L7.5 9.439 5.818 7.757a.75.75 0 0 0-1.06 1.06l2.212 2.213z"/>
+        </svg>
+        <div style="color: white;">
+          {{ message }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+<!-- messages================================  -->
 
 <div class="container mt-5 mb-5">
     <div class="contact_us" data-aos="slide-right">
@@ -18,35 +33,37 @@
                 <div class="connect d-flex justify-content-center align-items-center mb-5" >
                     <h2>GET IN TOUCH</h2>
                 </div>
-                <form>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">First Name</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Phone no</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                <form method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="mb-3">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mb-3">
+        {{ form.phone.label_tag }}
+        {{ form.phone }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.message.label_tag }}
+        {{ form.message }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
             </div>
             <div class="col-lg-6">
                 <div >
@@ -61,3 +78,14 @@
 
 
 {% endblock %}
+
+<script>
+  setTimeout(function() {
+    const alert = document.querySelector('.alert');
+    if (alert) {
+      alert.style.transition = 'opacity 0.5s ease';
+      alert.style.opacity = '0';
+      setTimeout(() => alert.remove(), 500);
+    }
+  }, 4000); // 4 seconds
+</script>

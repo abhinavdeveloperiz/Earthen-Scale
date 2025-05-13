@@ -2,11 +2,13 @@
 
 {% load static %}
 
-{% block title %}Earth N’ Sky Architects & Engineers{% endblock  %}
+{% block title %}Earth N’ Sky Architects & Engineers{% endblock %}
 
-{% block parallax %}https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1{% endblock  %}
+{% block parallax
+%}https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1{%
+endblock %}
 
-{% block heading %}PROJECTS{% endblock  %}
+{% block heading %}PROJECTS{% endblock %}
 
 {% block body %}
 
@@ -17,109 +19,37 @@
   <a href="contact-us">
     <button class="reads">
       <span class="box">
-          Contact Us
+        Contact Us
       </span>
     </button>
   </a>
 </div>
 
 <div class="parallax_container3">
-    <div class="container pb-5">
+  <div class="container pb-5">
+    <div class="row projects">
 
-      <div class="row projects">
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
-    <div class="projects_details">
-      <img src="{% static 'media/1.jpg' %}" alt="Mr. SIDRA Residential Project">
-      <div class="content">
-        <h6>Project: SIDRA</h6>
-        <h6>CLIENT: ARUN</h6>
-        <span class="project-type mb-1">RESIDENTIAL</span>
-        <span class="project-type">Location: KACHANI,TRIVANDRUM</span>
+      {% for p in property %}
+  <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+    <a href="{% url 'projects-details' p.id %}" class="project-card">
+      <div class="projects_details">
+        <img src="{{ p.image1.url }}" alt="image">
+        <div class="content">
+          <h6>{{ p.name }}</h6>
+          <span class="project-type">{{ p.location }}</span>
+        </div>
+        <div class="overlay"></div>
       </div>
-      <div class="overlay"></div>
-    </div>
-  </a>
-</div>
+    </a>
+  </div>
+{% endfor %}
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
-    <div class="projects_details">
-      <img src="{% static 'media/2.jpg' %}" alt="Mr. SIDRA Residential Project">
-      <div class="content">
-        <h6>Project: AGHADHAARA</h6>
-        <h6>CLIENT: RATHEESH & FAMILY</h6>
-        <span class="project-type mb-1">RESIDENTIAL</span>
-        <span class="project-type">Location: PUTHUKKAD,KOLLAM</span>
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </a>
-</div>
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
-    <div class="projects_details">
-      <img src="{% static 'media/3.jpg' %}" alt="Mr. SIDRA Residential Project">
-      <div class="content">
-        <h6>Project: ZAAISH</h6>
-        <h6>CLIENT: THOUFEEK</h6>
-        <span class="project-type mb-1">RESIDENTIAL</span>
-        <span class="project-type">Location: NILAMEL,KOLLAM</span>
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </a>
-</div>
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
-    <div class="projects_details">
-      <img src="{% static 'media/4.jpg' %}" alt="Mr. SIDRA Residential Project">
-      <div class="content">
-        <h6>Project: COGNITIVE CENTER</h6>
-        <span class="project-type mb-1">PUBLIC BUILDING</span>
-        <span class="project-type">Location: VAYALA,KOLLAM</span>
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </a>
-</div>
-
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
-    <div class="projects_details">
-      <img src="{% static 'media/6.jpg' %}" alt="Mr. SIDRA Residential Project">
-      <div class="content">
-        <h6>Project: SANKETHAM</h6>
-        <h6>CLIENT: SANTHOSH</h6>
-        <span class="project-type mb-1">RESIDENTIAL</span>
-        <span class="project-type">Location: SOCIETY JN ,KOLLAM</span>
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </a>
-</div>
-
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
-    <div class="projects_details">
-      <img src="{% static 'media/7.jpg' %}" alt="Mr. SIDRA Residential Project">
-      <div class="content">
-        <h6>Project: The vertical Realm.</h6>
-        <h6>CLIENT: Mrs Sunitha & Mr Ameer</h6>
-        <span class="project-type mb-1">RESIDENTIAL</span>
-        <span class="project-type">Location: Kottiyam, Kollam</span>
-      </div>
-      <div class="overlay"></div>
-    </div>
-  </a>
-</div>
-
-      </div>
     </div>
   </div>
+</div>
 
 
-{% endblock  %}
+{% endblock %}

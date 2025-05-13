@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earth N’ Sky Architects & Engineers</title>
+    <title>Earthen Scale</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -29,7 +29,22 @@
 
 </head>
 <body>
-
+  <!-- msg============================ -->
+ {% if messages %}
+  <div class="position-fixed top-0 start-0 p-3" style="z-index: 1050;">
+    {% for message in messages %}
+      <div class="alert alert-success d-flex align-items-center shadow" role="alert" style="min-width: 300px; max-width: 500px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-check-circle-fill flex-shrink-0 me-2" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.97 11.03a.75.75 0 0 0 1.07 0l4.243-4.242a.75.75 0 0 0-1.06-1.06L7.5 9.439 5.818 7.757a.75.75 0 0 0-1.06 1.06l2.212 2.213z"/>
+        </svg>
+        <div style="color: white;">
+          {{ message }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+<!-- msg=========================================== -->
 
   
 
@@ -83,26 +98,17 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <form class="text-white">
-          <div class="mb-3">
-            <label for="name" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="3" placeholder="Describe your request"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Submit</button>
-        </form>
-      </div>
+  <form method="post" class="text-white">
+    {% csrf_token %}
+    
+    {{form}}
+
+    
+
+    <button type="submit" class="btn btn-primary w-50 mx-auto d-flex justify-content-center mt-5">Submit</button>
+  </form>
+</div>
+
     </div>
 
 
@@ -229,7 +235,7 @@
             <h2 class="mb-4">Let’s shape your dream together, where Earth meets Scale</h2>
           
             <p class="mb-5" style="text-align: justify;">
-              At Earthen Scale design consortium, we blend the vision of architecture with the exactness of engineering. Our mission is to design environments that are as enduring as they are inspiring. Innovation fuels our process, ensuring that each project embodies modern functionality while reflecting timeless design principles. Sustainability guides every decision, helping us create in harmony with the natural world. We believe great design balances human experience with ecological responsibility. Each structure we craft is a fusion of beauty, practicality, and purpose. By aligning aesthetics with structural integrity, we deliver spaces that elevate everyday living. Our work respects tradition while embracing the future, always driven by thoughtful collaboration. At Earth & Scale, we shape more than buildings—we shape possibilities, grounded in precision and inspired by nature.
+              At Earthen Scale Design Consortium, we blend the vision of architecture with the exactness of engineering. Our mission is to design environments that are as enduring as they are inspiring. Innovation fuels our process, ensuring that each project embodies modern functionality while reflecting timeless design principles. Sustainability guides every decision, helping us create in harmony with the natural world. We believe great design balances human experience with ecological responsibility. Each structure we craft is a fusion of beauty, practicality, and purpose. By aligning aesthetics with structural integrity, we deliver spaces that elevate everyday living. Our work respects tradition while embracing the future, always driven by thoughtful collaboration. At Earth & Scale, we shape more than buildings—we shape possibilities, grounded in precision and inspired by nature.
             </p>
           </div>
           
@@ -314,8 +320,10 @@
 
       <div class="row projects">
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
+
+
+<div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+  <a href="projects" class="project-card">
     <div class="projects_details">
       <img src="{% static 'media/1.jpg' %}" alt="Mr. SIDRA Residential Project">
       <div class="content">
@@ -329,8 +337,8 @@
   </a>
 </div>
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
+<div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
+  <a href="projects" class="project-card">
     <div class="projects_details">
       <img src="{% static 'media/2.jpg' %}" alt="Mr. SIDRA Residential Project">
       <div class="content">
@@ -345,7 +353,7 @@
 </div>
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
+  <a href="projects" class="project-card">
     <div class="projects_details">
       <img src="{% static 'media/3.jpg' %}" alt="Mr. SIDRA Residential Project">
       <div class="content">
@@ -360,7 +368,7 @@
 </div>
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
+  <a href="projects" class="project-card">
     <div class="projects_details">
       <img src="{% static 'media/4.jpg' %}" alt="Mr. SIDRA Residential Project">
       <div class="content">
@@ -374,7 +382,7 @@
 </div>
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
+  <a href="projects" class="project-card">
     <div class="projects_details">
       <img src="{% static 'media/6.jpg' %}" alt="Mr. SIDRA Residential Project">
       <div class="content">
@@ -389,7 +397,7 @@
 </div>
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12 projects_img" data-aos="fade-right">
-  <a href="project-details" class="project-card">
+  <a href="projects" class="project-card">
     <div class="projects_details">
       <img src="{% static 'media/7.jpg' %}" alt="Mr. SIDRA Residential Project">
       <div class="content">
@@ -402,6 +410,7 @@
     </div>
   </a>
 </div>
+
 
       </div>
 
@@ -429,7 +438,7 @@
     <div class="want">
       <span>Wanna build up your career with us ?</span>
     </div>
-    <a href="careers">
+    <a href="contact-us">
       <button class="reads">
         <span class="box">
           Contact Us
@@ -715,6 +724,16 @@
 </script>
 <script>
   AOS.init();
+</script>
+<script>
+  setTimeout(function() {
+    const alert = document.querySelector('.alert');
+    if (alert) {
+      alert.style.transition = 'opacity 0.5s ease';
+      alert.style.opacity = '0';
+      setTimeout(() => alert.remove(), 500);
+    }
+  }, 4000); // 4 seconds
 </script>
 </body>
 </html>
