@@ -24,30 +24,31 @@ class Property_model(models.Model):
         return f"{self.name} / {self.client_name}"
 
 
+
 class Hiring(models.Model):
-    name=models.CharField(max_length=100)
-    email=models.EmailField()
-    phone=models.CharField(max_length=15)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    
     position_choice = (
-    ('architect', 'Architect'),
-    ('junior_architect', 'Junior Architect'),
-    ('interior_designer', 'Interior Designer'),
-    ('3d_visualizer', '3D Visualizer'),
-    ('project_manager', 'Project Manager'),
-    ('site_engineer', 'Site Engineer'),
-    ('urban_planner', 'Urban Planner'),
-    ('draughtsman', 'Draughtsman'),
-    ('bim_specialist', 'BIM Specialist'),
-    ('landscape_architect', 'Landscape Architect'),
-    ('civil_engineer', 'Civil Engineer'),
-    ('structural_engineer', 'Structural Engineer'),
-    ('admin_staff', 'Admin Staff'),
-)
-    position=models.CharField(max_length=100,choices=position_choice,default="architect")
-    resume=models.FileField(upload_to='resumes/')
+        ('architect', 'Architect'),
+        ('junior_architect', 'Junior Architect'),
+        ('interior_designer', 'Interior Designer'),
+        ('3d_visualizer', '3D Visualizer'),
+        ('project_manager', 'Project Manager'),
+        ('site_engineer', 'Site Engineer'),
+        ('draftsman_civil', 'Draftsman Civil'),
+        ('quantity_surveyor', 'Quantity Surveyor'),
+    )
+    
+    position = models.CharField(max_length=100, choices=position_choice, default="architect")
+    resume = models.FileField(upload_to='resumes/')
+
     def __str__(self):
         return self.name
-    
+
+
+
 
 class Contact(models.Model):
     name=models.CharField(max_length=100)
