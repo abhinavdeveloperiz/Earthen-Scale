@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ">
                 <li class="nav-item">
-                  <a class="nav-link mx-4" href='/'>Home</a>
+                  <a class="nav-link mx-4" href="{% url 'index' %}">Home</a>
                   <i class="ri-arrow-up-double-line"></i>
                 </li>
                 <li class="nav-item">
@@ -105,42 +105,42 @@
               </div>
               <div class="col-12">
                 <div class="footer_links">
-                  <a href="/">
+                  <a href="{% url 'index' %}">
                       <p class="hover">Home</p>
                   </a>
                 </div>
               </div>
               <div class="col-12">
                 <div class="footer_links">
-                  <a href="who-we-are">
+                  <a href="{% url 'who-we-are' %}">
                     <p class="hover">Who we are</p>
                   </a>
                 </div>
               </div>
               <div class="col-12">
                 <div class="footer_links">
-                  <a href="what-we-offer">
+                  <a href="{% url 'what-we-offer' %}">
                       <p class="hover">What we offer</p>
                   </a>
                 </div>
               </div>
               <div class="col-12">
                 <div class="footer_links">
-                  <a href="projects">
+                  <a href="{% url 'projects' %}">
                       <p class="hover">Our Projects</p>
                   </a>
                 </div>
               </div>
               <div class="col-12">
                 <div class="footer_links">
-                  <a href="careers">
+                  <a href="{% url 'careers' %}">
                       <p class="hover">Careers</p>
                   </a>
                 </div>
               </div>
               <div class="col-12">
                 <div class="footer_links">
-                  <a href="contact-us">
+                  <a href="{% url 'contact-us' %}">
                       <p class="hover">Contact us</p>
                   </a>
                 </div>

@@ -73,12 +73,12 @@
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse text-center" id="navbarNav">
           <ul class="navbar-nav mx-auto gap-3">
-            <li class="nav-item"><a class="nav-link" href="">Home</a><i class="ri-arrow-up-double-line"></i></li>
-            <li class="nav-item"><a class="nav-link" href="who-we-are">Who We Are</a><i class="ri-arrow-up-double-line"></i></li>
-            <li class="nav-item"><a class="nav-link" href="what-we-offer">What We Offer</a><i class="ri-arrow-up-double-line"></i></li>
-            <li class="nav-item"><a class="nav-link" href="projects">Our Projects</a><i class="ri-arrow-up-double-line"></i></li>
-            <li class="nav-item"><a class="nav-link" href="careers">Careers</a><i class="ri-arrow-up-double-line"></i></li>
-            <li class="nav-item"><a class="nav-link" href="contact-us">Contact Us</a><i class="ri-arrow-up-double-line"></i> </li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'who-we-are' %}">Who We Are</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'what-we-offer' %}">What We Offer</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Our Projects</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'careers' %}">Careers</a><i class="ri-arrow-up-double-line"></i></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a><i class="ri-arrow-up-double-line"></i> </li>
           </ul>
     
           <!-- Get a Quote button for Desktop (hidden on mobile) -->
