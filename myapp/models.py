@@ -43,7 +43,7 @@ class Hiring(models.Model):
     ('structural_engineer', 'Structural Engineer'),
     ('admin_staff', 'Admin Staff'),
 )
-    position=models.CharField(max_length=100,choices=position_choice)
+    position=models.CharField(max_length=100,choices=position_choice,default="architect")
     resume=models.FileField(upload_to='resumes/')
     def __str__(self):
         return self.name

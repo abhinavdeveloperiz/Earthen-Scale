@@ -28,7 +28,6 @@
 <!-- messages================================  -->
 
 
-
 <div class="container mt-5 mb-5">
     <div class="careers d-flex flex-column justify-content-between">
         <div class="career_heading d-flex flex-column mb-5">
@@ -43,21 +42,15 @@
         <div class="career_line"></div>
 
         <div class="position d-flex flex-column mt-3 mb-3" data-aos="fade-right">
-            <div class="position_heading d-flex justify-content-between align-items-center w-100" >
-                <h3>Product Designer</h3>
+            <div class="position_heading d-flex justify-content-between align-items-center w-100">
+                <h3>Join Our Team</h3>
                 <div class="apply d-flex align-items-center gap-2 ms-auto" data-bs-toggle="modal" data-bs-target="#applyModal" style="cursor: pointer;">
                     <span>Apply</span>
                     <i class="ri-arrow-right-up-line"></i>
                 </div>
             </div>
-            <p class="p_fontweight">We're Looking for a mid-level product designer to join our team.</p>
-            <div class="career_line"></div>
-
-            <span class="mt-2">JOB DESCRIPTION</span>
-            <p class="mt-2 p_fontweight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam doloremque facere, obcaecati soluta corporis porro libero. Quisquam quis a quas neque ipsa eum!</p>
+            <p class="p_fontweight">We’re always on the lookout for talented individuals. Think you’d be a good fit? Apply now!</p>
         </div>
-
-      
 
         <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -69,7 +62,7 @@
                     <div class="modal-body">
                         <form method="post" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {{form.as_p}}
+                            {{ form.as_p }}
                             <button type="submit" class="btn btn-primary">Submit Application</button>
                         </form>
                     </div>
